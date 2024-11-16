@@ -1,47 +1,164 @@
-ShopEZ: E-commerce Application
-Category: Full-stack Development (MERN)
+ShopEZ: E-commerce Application - Report
 
-Skills Required: HTML, CSS, JavaScript, Node.js, MongoDB, Express.js, React.js
+1. Introduction
+Project Title: ShopEZ: E-commerce Application
+Team Members:
+Tina S
+Akshaya Nanthini V S
+Shoban Kumar C
+Deepak Roshan J
 
-Project Overview:
-ShopEZ is a feature-rich e-commerce platform built using the MERN stack, designed to offer a seamless and personalized shopping experience for users, while providing a robust administrative interface for sellers. The platform includes a dynamic product catalog, secure checkout process, and real-time order management, making it an ideal solution for both customers and business owners.
+2. Project Overview
+Purpose:
+ShopEZ is designed to cater to the growing need for efficient and user-friendly e-commerce platforms. It bridges the gap between complex online shopping systems and user convenience by providing streamlined navigation, secure transactions, and personalized product recommendations. Additionally, the platform empowers sellers with a dashboard for managing their inventory, processing orders, and accessing analytics to drive growth.
+Features:
+Seamless Checkout: Secure and smooth payment with instant order confirmations and email notifications.
+Effortless Product Discovery: Advanced search capabilities, intuitive category navigation, and powerful filters to help users find exactly what they need.
+Personalized Recommendations: AI-driven algorithms analyze user behavior to provide curated product suggestions.
+Seller Dashboard: Comprehensive tools for inventory tracking, order processing, and analytics to monitor performance metrics.
+Real-time Analytics: Data-driven insights for sellers, highlighting sales trends, customer preferences, and product performance.
 
-With a user-friendly interface, ShopEZ simplifies the process of discovering products, managing orders, and tracking business insights. It integrates secure payment options and provides personalized recommendations to enhance the shopping experience. For sellers, the application offers a comprehensive dashboard for monitoring and processing orders, along with valuable analytics to drive business growth.
+3. Architecture
+Frontend:
+It was developed using React.js for its component-based architecture and state management capabilities.
+Features dynamic components like:
+Product Listings: Displays products with sorting and filtering options.
+Cart Management: Allows users to add, update, or remove items in their cart.
+User Authentication: Login and registration pages with secure validation.
+Admin Panel: Provides sellers with tools to manage inventory and view analytics.
+Backend:
+It was built with Node.js and Express.js, ensuring scalability and high performance.
+Features include:
+API Endpoints:
+/products for fetching product data.
+/orders for processing customer orders.
+/users for managing user authentication.
+Middleware for error handling and authentication using JWT.
+Database:
+MongoDB serves as the database, storing collections for:
+Users: Authentication credentials, profiles, and purchase history.
+Products: Information on inventory, prices, categories, and descriptions.
+Orders: Details about placed orders, delivery status, and payment.
+This architecture ensures modularity, scalability, and efficient data management.
 
-Key Features:
+4. Setup Instructions
+Prerequisites:
+Node.js: v14 or later
+MongoDB: Installed locally or set up using a cloud provider like MongoDB Atlas
+npm: Package manager for installing dependencies
 
-Seamless Checkout: A smooth, secure checkout process with instant order confirmation.
-Effortless Product Discovery: Easy navigation and search features with product filtering options.
-Personalized Recommendations: Tailored product suggestions based on user preferences and browsing history.
-Seller Dashboard: Efficient order management and a set of tools to track sales and customer insights.
-Real-time Analytics: Actionable data insights to help sellers optimize their offerings and grow their business.
-Use Case Example:
-Sarah, a busy professional, needs a quick and thoughtful birthday gift for her friend Emily. She uses ShopEZ to navigate the fashion accessories section, where she finds a curated selection of bracelets. After refining her search based on budget and style, Sarah receives personalized recommendations and selects the perfect gold bangle for Emily. After a secure and seamless checkout process, Sarah receives an order confirmation and eagerly awaits the delivery. Meanwhile, the seller processes the order through their intuitive dashboard, ensuring timely shipment. On Emily's birthday, Sarah presents the bracelet, knowing it was chosen with ease and care through ShopEZ.
-
-Technical Architecture:
-
-Frontend: Built with React.js for dynamic UI, including components for user authentication, cart management, product listing, and admin dashboard.
-Backend: Node.js and Express.js handle API endpoints for user authentication, order processing, and product management.
-Database: MongoDB stores user profiles, product details, cart information, and order data, ensuring fast and reliable data retrieval.
-This architecture ensures the application is scalable, secure, and offers a seamless user experience from browsing to order completion.
-
-Installation & Setup:
-
+Installation:
 Clone the repository:
-git clone https://github.com/username/shopEZ.git
+https://github.com/stinastanley/stina.git
 
-Navigate to the project directory and install dependencies:
+Navigate to the project directory:
+cd shopEZ
+
+Install dependencies for the backend and frontend:
+
+Backend:
 cd server
 npm install
-node index.js
 
+Frontend:
 cd client
 npm install
+
+Run the servers:
+
+Backend:
+node index.js
+
+Frontend:
 npm start
 
-Technologies Used:
+5. Folder Structure
 
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: MongoDB
-Authentication: JWT (JSON Web Tokens)
+Client:
+src/components: Contains reusable components like Navbar, ProductCard, CartItem, etc.
+src/pages: Holds page components such as Home, Cart, Checkout, and AdminPanel.
+src/services: Manages API interactions for fetching and posting data.
+src/redux: Implements state management for cart items, user authentication, and order status.
+
+Server:
+routes: Defines all RESTful API routes for users, products, and orders.
+controllers: Contains the logic for handling API requests and responses.
+models: Defines database schemas for Users, Products, and Orders.
+middleware: Handles authentication (JWT) and error management.
+
+6. Running the Application
+
+Frontend:
+
+Navigate to the client directory:
+cd client
+
+Start the React application:
+npm start
+
+Backend:
+Navigate to the server directory:
+cd server
+
+Start the Node.js server:
+node index.js
+
+7. API Documentation
+
+Endpoints:
+GET /products
+Fetches the list of all products.
+Parameters: Optional category and price filters.
+Response:
+json
+[
+  {
+    "id": "123",
+    "name": "Gold Bracelet",
+    "price": 50,
+    "category": "Accessories"
+  }
+]
+
+POST /orders
+Places a new order.
+Parameters: User ID, product details, and quantity.
+Response:
+json
+{
+  "message": "Order placed successfully",
+  "orderId": "456"
+}
+
+8. Authentication
+JWT-based Authentication:
+Login: Issues a JWT token upon successful authentication.
+Token Validation: Protects private routes like /orders and /admin.
+Logout: Invalidates the token on the client side.
+
+9. User Interface
+Screens:
+Home: Displays trending products and categories.
+Product Details: Shows detailed information about a selected item.
+Cart: Summarizes selected products and their quantities.
+Admin Dashboard: Offers order status updates and analytics for sellers.
+
+10. Testing
+Unit Testing: Conducted using Jest for components and backend logic.
+API Testing: Performed using Postman to validate endpoints.
+
+11. Screenshots or Demo
+Screenshots of key UI components and admin panel.
+
+ Link to a live demo.
+Demo Video.mp4 / https://drive.google.com/file/d/1B025A59a0S6EKPuVxcbPbKBkClTjvwuN/view?usp=sharing 
+
+12. Known Issues
+Slow Search Performance: Optimization is required for large product datasets.
+UI Bugs: Minor alignment issues on smaller screens.
+
+13. Future Enhancements
+Voice Search: Enable users to search using voice commands.
+Mobile App: Create a cross-platform app using React Native.
+Multi-language Support: Expand accessibility for global audiences.
+
